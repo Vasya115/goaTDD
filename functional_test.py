@@ -46,8 +46,8 @@ class NewVisitorTest(unittest.TestCase):
         inputbox.send_keys(Keys.ENTER)
         time.sleep(1)
 
-        self.check_for_row_in_list_table('1: Купить павлиньи перья')
-        self.check_for_row_in_list_table('2: Сделать мушку из павлиньих перьев')
+        self.check_for_row_in_list_table('Купить павлиньи перья')
+        self.check_for_row_in_list_table('Сделать мушку из павлиньих перьев')
 
         self.fail('Закончить тест!')
  # Ей сразу же предлагается ввести элемент списка
