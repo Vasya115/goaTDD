@@ -1,13 +1,18 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from lists.models import Item
+from lists.models import Item, List
 
 
 def home_page(request):
-    if request.method == 'POST':
-        Item.objects.create(text=request.POST['item_text'])
-        return redirect('/lists/one-in-the-world-page')
+
     return render(request, 'home.html')
+
+
+def new_list(request):
+ #новый список'''
+    list_ = List.objects.create()
+    Item.objects.create(text=request.POST['item_text'],  list=list_ )
+    return redirect('/lists/one-in-the-world-page')
 
 
 def view_list(request):
